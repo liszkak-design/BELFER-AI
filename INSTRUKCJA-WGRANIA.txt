@@ -1,0 +1,151 @@
+BELFER-AI.PL - landing page (wersja 31.07.2026)
+==============================================
+
+ZAWARTOSC PACZKI
+----------------
+index.html                - cala strona (HTML + CSS + JS w jednym pliku)
+robots.txt                - zgoda na indeksowanie
+sitemap.xml               - mapa strony
+INSTRUKCJA-WGRANIA.txt    - ten plik
+
+KROK 1 - WGRANIE
+----------------
+Wrzuc wszystkie pliki do glownego katalogu domeny:
+public_html/ albo htdocs/ albo www/
+Strona dziala od razu. Nie wymaga PHP, bazy danych ani Node.
+
+Bez hostingu (darmowo, 30 sekund):
+- Netlify Drop     -> app.netlify.com/drop  (przeciagnij pliki)
+- Cloudflare Pages -> pages.cloudflare.com
+- GitHub Pages     -> repo + Settings > Pages
+
+Wlacz HTTPS (Let's Encrypt) - u wiekszosci hostingow jedno klikniecie.
+
+KROK 2 - PODLACZ FORMULARZ (NAJWAZNIEJSZE)
+------------------------------------------
+UWAGA: w index.html jest juz wpisany adres
+https://formspree.io/f/TWOJE_ID - MUSISZ podmienic TWOJE_ID
+na wlasne, inaczej formularz nadal nie zadziala.
+
+Formularz obecnie pokazuje tylko komunikat, NIE wysyla zgloszen.
+
+Formspree (darmowy plan, 50 zgloszen/mies.):
+1. formspree.io -> nowy formularz -> skopiuj ID
+2. w index.html znajdz:
+   <form class="lead" action="#" method="post" onsubmit="alert(...);return false;">
+3. zamien na:
+   <form class="lead" action="https://formspree.io/f/TWOJE_ID" method="POST">
+   (usun caly atrybut onsubmit)
+
+Alternatywy: Tally.so, Web3Forms, Getform.
+
+KROK 3 - PODMIEN DANE PRZYKLADOWE
+---------------------------------
+UWAGA PRAWNA: ponizsze liczby i opinie sa PRZYKLADOWE.
+Publikowanie ich jako prawdziwych to ryzyko zarzutu
+wprowadzania konsumenta w blad.
+
+Do podmiany:
+- "6 godzin tygodniowo" (naglowek glowny)
+- "10 minut zamiast 2,5 godziny"
+- "9 z 10 testerow rekomenduje"
+- 4 opinie nauczycieli w sekcji Opinie
+- nazwy szkol w pasku zaufania pod naglowkiem
+- wskazniki w makiecie panelu (24 materialy, 18 h)
+
+KROK 4 - BRAKUJACE PLIKI (opcjonalne)
+-------------------------------------
+og-belfer-ai.png                    1200x630 px, podglad w social media
+
+KROK 5 - POLITYKA PRYWATNOSCI
+-----------------------------
+Po podlaczeniu formularza jest WYMAGANA przez RODO.
+Plik polityka-prywatnosci.html jest w repozytorium - uzupelnij
+pola w nawiasach kwadratowych.
+
+KROK 6 - ANALITYKA (opcjonalnie)
+--------------------------------
+Patrz plik COOKIES-INSTRUKCJA.txt. NIE wklejaj kodu bezposrednio -
+musi byc zablokowany do czasu zgody uzytkownika.
+
+CO ZAWIERA STRONA
+-----------------
+16 sekcji: hero z makieta panelu aplikacji, pasek zaufania,
+wskazniki rezultatu, opinie nauczycieli, porownanie przed/po,
+problem, produkt (8 modulow), jak dziala, interfejs (3 makiety),
+przyklad scenariusza, technologia, odbiorcy, przewaga nad chatbotem,
+etyka, zgodnosc (RODO / AI Act / dane w UE), kalkulator oszczednosci,
+cennik, obiekcje zakupowe, sciezka zakupu, roadmapa, FAQ,
+CTA z formularzem.
+
+Kontakt na stronie:
+Krzysztof Liszka, liszka.k@gmail.com, 509 308 253
+
+TECHNICZNIE
+-----------
+- Jeden plik, zero frameworkow, tylko czysty JavaScript.
+- Google Fonts laduja sie WYLACZNIE po zgodzie w banerze cookies.
+- Dane strukturalne JSON-LD: SoftwareApplication + FAQPage.
+- Responsywnosc: 5 progow (1024 / 900 / 760 / 600 / 520 px),
+  menu mobilne z hamburgerem, tabele przewijane poziomo.
+- Dostepnosc: obsluga prefers-reduced-motion, aria na menu,
+  brak efektow hover na ekranach dotykowych.
+- Arkusz do druku (naglowek, makiety i formularz sie nie drukuja).
+
+ZMIANA DOMENY
+-------------
+Jesli adres bedzie inny niz belfer-ai.pl, podmien w index.html
+wszystkie wystapienia "belfer-ai.pl" (canonical, og:url, og:image)
+oraz w robots.txt i sitemap.xml.
+
+NADAL DO ZROBIENIA
+------------------
+1. Podmien TWOJE_ID w adresie Formspree
+2. Uzupelnij polityke prywatnosci (dane administratora, dostawcy)
+3. Wgraj og-belfer-ai.png (1200x630)
+4. Podmien dane przykladowe w sekcji Opinie i pasku zaufania
+5. Rozwaz hostowanie czcionek lokalnie zamiast Google Fonts
+
+HISTORIA POPRAWEK
+-----------------
+BANER COOKIES (31.07.2026)
+- Google Fonts nie laduja sie bez zgody (byl to wyciek IP do Google
+  mimo deklaracji zgodnosci z RODO)
+- Przyciski Akceptuj / Odrzuc sa rownorzedne wizualnie - wymog UODO
+- polityka-prywatnosci.html rozszerzona o tabele cookies
+
+PRZYCISKI BANERA (31.07.2026)
+Przyczyna: regula .cc-modal{display:flex} nadpisywala atrybut hidden.
+Okno ustawien bylo niewidoczne, ale lezalo na calym ekranie
+z z-index 9200 i przechwytywalo klikniecia.
+Naprawione: [hidden]{display:none!important}, przelaczanie klasa
+.cc-show, start po DOMContentLoaded, wlasny handler dla kazdego
+przycisku.
+
+BANER NIE POKAZYWAL SIE (31.07.2026)
+Przyczyna: wybor byl juz zapisany w localStorage podczas testow.
+RESET: w konsoli (F12) wpisz BAI_RESET()
+
+TEKST ZGODY W FORMULARZU (31.07.2026)
+Przyczyna: form.lead label{display:block} nadpisywala uklad flex -
+tekst zwezal sie i wychodzil poza biala karte. Naprawione.
+
+ODSTEPY I WYSRODKOWANIE (31.07.2026)
+Naglowek nie dotyka juz akapitu, akapit wysrodkowany, wylaczone
+dzielenie wyrazow. Stopka: 4 kolumny w jednej linii.
+
+PRZYKLADOWY SCENARIUSZ (31.07.2026)
+Dodano podstrone przyklad-scenariusz-belfer-ai.html - pelny pakiet
+dydaktyczny. Przycisk w sekcji Przyklad prowadzi teraz do niej
+zamiast do nieistniejacego pliku PDF.
+
+KOMENDY KONSOLI (F12)
+   BAI_RESET()  - kasuje zgode i przeladowuje strone
+   BAI_OPEN()   - otwiera okno ustawien cookies
+
+PO KAZDYM WGRANIU NA SERWER
+---------------------------
+1. Ctrl+Shift+R (twarde odswiezenie)
+2. Wyczysc cache w panelu hostingu / Cloudflare
+3. Wylacz minifikacje JS, jesli hosting ja stosuje
+4. Otworz TEST-BANERA.html - instrukcja sprawdzenia

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://belfer-ai.pl/sitemap.xml
