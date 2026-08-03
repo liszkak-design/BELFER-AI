@@ -1,0 +1,302 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Przykładowy scenariusz lekcji – Belfer AI</title>
+<meta name="description" content="Pełny przykład materiałów wygenerowanych przez Belfer AI: scenariusz lekcji, karta pracy w trzech poziomach, sprawdzian z kluczem i adaptacja SPE.">
+<style>
+:root{--p:#1d4ed8;--a:#f97316;--d:#0f172a;--m:#64748b;--b:#e6ebf4;--bg:#f7f9fc}
+*{box-sizing:border-box}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;margin:0;background:var(--bg);color:var(--d);line-height:1.68;font-size:15px}
+.page{max-width:880px;margin:0 auto;background:#fff;padding:0 0 60px;box-shadow:0 2px 30px rgba(15,23,42,.08)}
+.top{background:linear-gradient(135deg,#0b1220,#152238);color:#fff;padding:34px clamp(20px,4vw,48px) 30px}
+.brand{font-size:.78rem;letter-spacing:2.4px;font-weight:800;color:#fff;margin-bottom:16px}
+.brand span{color:var(--a)}
+.top h1{font-size:clamp(1.5rem,3.4vw,2rem);margin:0 0 8px;letter-spacing:-.03em;line-height:1.18}
+.top p{margin:0;color:#c3d0e6;font-size:.94rem;max-width:60ch}
+.badge{display:inline-block;background:rgba(249,115,22,.16);border:1px solid rgba(249,115,22,.45);color:#fdba74;font-size:.68rem;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.gen{display:flex;gap:22px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.13);font-size:.78rem;color:#94a3b8}
+.gen b{display:block;color:#fff;font-weight:600;font-size:.85rem;margin-top:2px}
+main{padding:0 clamp(20px,4vw,48px)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0;border:1px solid var(--b);border-radius:12px;overflow:hidden;margin:30px 0 34px;background:#fafbfe}
+.meta div{padding:13px 16px;border-right:1px solid var(--b)}
+.meta div:last-child{border-right:none}
+.meta span{display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:1.1px;color:var(--m);font-weight:600;margin-bottom:3px}
+.meta b{font-size:.92rem;font-weight:600}
+h2{font-size:1.18rem;letter-spacing:-.02em;margin:38px 0 14px;padding-bottom:9px;border-bottom:2px solid var(--b);position:relative}
+h2:after{content:"";position:absolute;bottom:-2px;left:0;width:52px;height:2px;background:var(--a)}
+h3{font-size:1rem;margin:26px 0 9px;letter-spacing:-.01em}
+h4{font-size:.9rem;margin:18px 0 7px;color:var(--p)}
+p{margin:0 0 12px}
+ul,ol{padding-left:22px;margin:0 0 14px}
+li{margin-bottom:7px}
+.pp{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid var(--p);border-radius:10px;padding:14px 17px;margin:14px 0;font-size:.87rem}
+.pp b{color:#1e40af;display:block;margin-bottom:5px;font-size:.72rem;letter-spacing:1.1px;text-transform:uppercase}
+.pp code{background:#dbeafe;padding:1px 6px;border-radius:4px;font-size:.83em;color:#1e3a8a;font-family:ui-monospace,monospace}
+.tip{background:#fff7ed;border:1px solid #fed7aa;border-left:4px solid var(--a);border-radius:10px;padding:14px 17px;margin:14px 0;font-size:.87rem;color:#7c2d12}
+.tip b{display:block;margin-bottom:4px;font-size:.72rem;letter-spacing:1.1px;text-transform:uppercase;color:#9a3412}
+.tw{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:.86rem;background:#fff}
+th,td{padding:10px 13px;border:1px solid var(--b);text-align:left;vertical-align:top}
+th{background:#0b1220;color:#fff;font-weight:600;font-size:.76rem;letter-spacing:.03em;text-transform:uppercase}
+tbody tr:nth-child(even){background:#fafbfe}
+.tmin{white-space:nowrap;font-weight:700;color:var(--p);width:62px}
+.card{border:1px solid var(--b);border-radius:12px;padding:18px 20px;margin:14px 0;background:#fff}
+.card.lvl1{border-left:4px solid #22c55e}
+.card.lvl2{border-left:4px solid #f59e0b}
+.card.lvl3{border-left:4px solid #8b5cf6}
+.card.spe{border-left:4px solid #06b6d4;background:#f0fdff}
+.lvl{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:9px}
+.lvl1 .lvl{background:#dcfce7;color:#15803d}
+.lvl2 .lvl{background:#fef3c7;color:#b45309}
+.lvl3 .lvl{background:#ede9fe;color:#6d28d9}
+.spe .lvl{background:#cffafe;color:#0e7490}
+.q{margin:14px 0;padding-left:2px}
+.q b{color:var(--d)}
+.lines{border-bottom:1px dotted #94a3b8;height:19px;margin:7px 0}
+.key{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:15px 18px;font-size:.86rem;margin:12px 0}
+.key b{color:#15803d}
+.pts{float:right;font-size:.74rem;color:var(--m);font-weight:600;background:#f1f5f9;padding:2px 9px;border-radius:6px}
+.sig{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:34px;padding-top:22px;border-top:1px solid var(--b);font-size:.8rem;color:var(--m)}
+.sig div{border-top:1px solid #94a3b8;padding-top:6px;margin-top:38px}
+.foot{margin-top:44px;padding:22px clamp(20px,4vw,48px);background:#0b1220;color:#94a3b8;font-size:.78rem;line-height:1.65}
+.foot b{color:#fff}
+.foot a{color:#fb923c}
+.back{display:inline-block;margin:24px clamp(20px,4vw,48px) 0;color:var(--p);text-decoration:none;font-weight:600;font-size:.88rem}
+.noprint{margin:20px clamp(20px,4vw,48px) 0;display:flex;gap:10px;flex-wrap:wrap}
+.btn{background:var(--a);color:#fff;border:none;padding:11px 20px;border-radius:9px;font-weight:700;font-size:.86rem;cursor:pointer;font-family:inherit;text-decoration:none;display:inline-block}
+.btn.alt{background:#fff;color:var(--d);border:1.5px solid var(--d)}
+@media print{
+ body{background:#fff;font-size:10.5pt}
+ .page{box-shadow:none;max-width:100%}
+ .noprint,.back{display:none!important}
+ h2{page-break-after:avoid}
+ .card,table,.key{page-break-inside:avoid}
+ .top{background:#0b1220!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ th{background:#0b1220!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+@media(max-width:640px){.sig{grid-template-columns:1fr}.meta div{border-right:none;border-bottom:1px solid var(--b)}}
+</style></head><body>
+<div class="page">
+
+<div class="top">
+<div class="brand">BELFER<span>-AI.PL</span></div>
+<span class="badge">Przykładowy materiał</span>
+<h1>Budowa i funkcje układu krwionośnego człowieka</h1>
+<p>Kompletny pakiet dydaktyczny wygenerowany przez Belfer AI na podstawie jednego polecenia nauczyciela. Zawiera scenariusz lekcji, kartę pracy w trzech poziomach, sprawdzian z kluczem oraz adaptację dla uczniów ze specjalnymi potrzebami edukacyjnymi.</p>
+<div class="gen">
+<div>Przedmiot<b>Biologia</b></div>
+<div>Klasa<b>7 szkoły podstawowej</b></div>
+<div>Czas<b>45 minut</b></div>
+<div>Czas generowania<b>1 min 47 s</b></div>
+<div>Wersja<b>Pakiet pełny</b></div>
+</div>
+</div>
+
+<div class="noprint">
+<button class="btn" onclick="window.print()">Drukuj lub zapisz jako PDF</button>
+<a class="btn alt" href="index.html">Wróć na stronę główną</a>
+</div>
+
+<main>
+
+<div class="pp">
+<b>Polecenie wpisane przez nauczyciela</b>
+<code>Biologia, klasa 7, temat: układ krwionośny. 45 minut, 24 uczniów, w tym 2 z dysleksją i 1 z orzeczeniem o niepełnosprawności intelektualnej w stopniu lekkim. Chcę scenariusz, kartę pracy w trzech poziomach i krótki sprawdzian z kluczem.</code>
+</div>
+
+<div class="meta">
+<div><span>Dział</span><b>Organizm człowieka</b></div>
+<div><span>Typ lekcji</span><b>Wprowadzająca</b></div>
+<div><span>Metody</span><b>Aktywizujące</b></div>
+<div><span>Ocenianie</span><b>Kształtujące</b></div>
+</div>
+
+<h2>1. Podstawa programowa</h2>
+<p>Materiał odwołuje się do wymagań szczegółowych z rozporządzenia MEN w sprawie podstawy programowej kształcenia ogólnego dla szkoły podstawowej, przedmiot biologia, dział VII „Organizm człowieka”.</p>
+<div class="tw"><table>
+<thead><tr><th>Kod</th><th>Treść wymagania</th><th>Realizacja na lekcji</th></tr></thead>
+<tbody>
+<tr><td><b>VII.6.1</b></td><td>Uczeń przedstawia funkcje krwi i jej składników</td><td>Faza wprowadzająca, zadanie 1 karty pracy</td></tr>
+<tr><td><b>VII.6.2</b></td><td>Uczeń rozpoznaje elementy budowy serca i opisuje jego rolę</td><td>Praca z modelem, zadanie 2 karty pracy</td></tr>
+<tr><td><b>VII.6.3</b></td><td>Uczeń przedstawia krwiobieg duży i mały</td><td>Ćwiczenie „żywy schemat”, zadanie 3</td></tr>
+<tr><td><b>VII.6.5</b></td><td>Uczeń analizuje związek budowy naczyń z ich funkcją</td><td>Analiza porównawcza, zadanie 4</td></tr>
+<tr><td><b>XI.2</b></td><td>Uczeń uzasadnia znaczenie aktywności fizycznej dla zdrowia</td><td>Faza podsumowująca, dyskusja</td></tr>
+</tbody></table></div>
+
+<h2>2. Cele lekcji</h2>
+<h4>Cel ogólny</h4>
+<p>Zapoznanie uczniów z budową i funkcjonowaniem układu krwionośnego człowieka oraz kształtowanie świadomości wpływu stylu życia na zdrowie serca.</p>
+
+<h4>Cele w języku ucznia — „Na dzisiejszej lekcji nauczę się…”</h4>
+<ul>
+<li>…wymieniać składniki krwi i mówić, do czego służy każdy z nich,</li>
+<li>…pokazywać na schemacie cztery jamy serca i wyjaśniać, po co są zastawki,</li>
+<li>…opisywać własnymi słowami drogę krwi w krwiobiegu małym i dużym,</li>
+<li>…wyjaśniać, czym różni się tętnica od żyły i dlaczego mają inną budowę,</li>
+<li>…podawać trzy nawyki, które pomagają mojemu sercu pracować dłużej.</li>
+</ul>
+
+<h4>Kryteria sukcesu — „Będę wiedzieć, że mi się udało, gdy…”</h4>
+<ul>
+<li>…poprawnie podpiszę wszystkie elementy na schemacie serca,</li>
+<li>…prześledzę palcem drogę kropli krwi od płuc do stopy i z powrotem,</li>
+<li>…wyjaśnię koledze, dlaczego tętnica ma grubszą ścianę niż żyła,</li>
+<li>…rozwiążę co najmniej 6 z 8 zadań na karcie pracy.</li>
+</ul>
+
+<h2>3. Środki dydaktyczne</h2>
+<ul>
+<li>Model serca lub plansza anatomiczna, ewentualnie rzutnik i schemat cyfrowy</li>
+<li>Karty pracy w trzech poziomach — 24 egzemplarze</li>
+<li>Niebieskie i czerwone wstążki lub sznurki, około 8 metrów, do ćwiczenia „żywy schemat”</li>
+<li>Stoper lub telefon do pomiaru tętna</li>
+<li>Kartki samoprzylepne w dwóch kolorach do podsumowania</li>
+</ul>
+
+<h2>4. Przebieg lekcji</h2>
+<div class="tw"><table>
+<thead><tr><th>Czas</th><th>Etap i czynności</th><th>Metoda i forma</th></tr></thead>
+<tbody>
+<tr><td class="tmin">0–3 min</td><td><b>Czynności organizacyjne i nawiązanie.</b> Nauczyciel prosi uczniów o odnalezienie tętna na nadgarstku i policzenie uderzeń przez 15 sekund. Pytanie otwierające: „Co przed chwilą policzyliście? Co takiego dzieje się w środku, że możecie to poczuć?”</td><td>Rozmowa kierowana, praca indywidualna</td></tr>
+<tr><td class="tmin">3–6 min</td><td><b>Podanie tematu i celów.</b> Nauczyciel zapisuje temat i odczytuje cele w języku ucznia. Uczniowie zaznaczają w karcie pracy, który cel wydaje im się najtrudniejszy.</td><td>Wykład informujący</td></tr>
+<tr><td class="tmin">6–14 min</td><td><b>Krew i jej składniki.</b> Krótka prezentacja: osocze, erytrocyty, leukocyty, trombocyty. Nauczyciel używa porównania do transportu miejskiego — osocze jako droga, krwinki czerwone jako kurierzy z tlenem, białe jako patrol, płytki jako ekipa naprawcza. Uczniowie uzupełniają zadanie 1.</td><td>Pogadanka z elementami wykładu</td></tr>
+<tr><td class="tmin">14–24 min</td><td><b>Budowa serca.</b> Praca z modelem lub planszą. Uczniowie w parach opisują cztery jamy serca i lokalizują zastawki. Nauczyciel zadaje pytanie problemowe: „Co by się stało, gdyby zastawka przestała się domykać?” Uczniowie formułują hipotezy, następnie uzupełniają zadanie 2.</td><td>Praca w parach, obserwacja</td></tr>
+<tr><td class="tmin">24–34 min</td><td><b>Ćwiczenie „żywy schemat”.</b> Sześcioro uczniów staje w wyznaczonych punktach sali: serce, płuca, komórki ciała. Jeden uczeń z czerwoną wstążką przemieszcza się jako krew utlenowana, drugi z niebieską jako odtlenowana. Klasa na głos komentuje kolejne etapy. Ćwiczenie powtarzamy dwa razy, za drugim razem bez podpowiedzi nauczyciela.</td><td>Drama edukacyjna, praca grupowa</td></tr>
+<tr><td class="tmin">34–40 min</td><td><b>Naczynia krwionośne.</b> Analiza porównawcza tętnic, żył i naczyń włosowatych w tabeli. Uczniowie samodzielnie formułują wniosek o związku budowy z funkcją i wykonują zadanie 4.</td><td>Analiza porównawcza, praca indywidualna</td></tr>
+<tr><td class="tmin">40–44 min</td><td><b>Podsumowanie i odniesienie do zdrowia.</b> Uczniowie na kartkach samoprzylepnych zapisują: kolor zielony — jeden nawyk służący sercu, kolor żółty — jedno pytanie, na które nadal nie znają odpowiedzi. Kartki trafiają na tablicę i stanowią punkt wyjścia następnej lekcji.</td><td>Technika „wyjściówka”, ocenianie kształtujące</td></tr>
+<tr><td class="tmin">44–45 min</td><td><b>Praca domowa i pożegnanie.</b> Zadanie obowiązkowe: dokończyć kartę pracy. Zadanie dla chętnych: zmierzyć tętno przed i po dwóch minutach przysiadów, zapisać wynik i spróbować wyjaśnić różnicę.</td><td>Instruktaż</td></tr>
+</tbody></table></div>
+
+<h2>5. Karta pracy — trzy poziomy trudności</h2>
+<p>Ten sam zestaw zagadnień w trzech wariantach. Wszyscy uczniowie pracują nad tym samym tematem, ale każdy na dostępnym dla siebie poziomie — nikt nie zostaje w tyle i nikt się nie nudzi.</p>
+
+<div class="card lvl1">
+<span class="lvl">Poziom podstawowy</span>
+<h3>Zadanie 1. Składniki krwi <span class="pts">4 pkt</span></h3>
+<p>Połącz nazwę składnika z jego zadaniem. Wpisz literę obok cyfry.</p>
+<ul style="list-style:none;padding-left:0">
+<li>1. Krwinki czerwone ....... &nbsp;&nbsp; A. Zatrzymują krwawienie</li>
+<li>2. Krwinki białe ....... &nbsp;&nbsp; B. Przenoszą tlen</li>
+<li>3. Płytki krwi ....... &nbsp;&nbsp; C. Płynna część krwi</li>
+<li>4. Osocze ....... &nbsp;&nbsp; D. Bronią przed zarazkami</li>
+</ul>
+<h3>Zadanie 2. Serce <span class="pts">3 pkt</span></h3>
+<p>Uzupełnij zdania wyrazami z ramki: <i>cztery, zastawki, mięsień</i>.</p>
+<p>Serce to ................................., który pracuje przez całe życie. Ma ................................. jamy. Aby krew nie cofała się do tyłu, w sercu znajdują się .................................</p>
+</div>
+
+<div class="card lvl2">
+<span class="lvl">Poziom rozszerzony</span>
+<h3>Zadanie 3. Krwiobieg mały i duży <span class="pts">5 pkt</span></h3>
+<p>Uporządkuj etapy wędrówki kropli krwi, wpisując cyfry od 1 do 5. Zacznij od lewej komory.</p>
+<ul style="list-style:none;padding-left:0">
+<li>....... Krew wraca do lewego przedsionka żyłami płucnymi</li>
+<li>....... Krew oddaje tlen komórkom ciała</li>
+<li>....... Krew wypływa z lewej komory do aorty</li>
+<li>....... Krew pobiera tlen w płucach</li>
+<li>....... Krew wraca do prawego przedsionka żyłą główną</li>
+</ul>
+<h3>Zadanie 4. Naczynia krwionośne <span class="pts">4 pkt</span></h3>
+<p>Uzupełnij tabelę.</p>
+<div class="tw"><table>
+<thead><tr><th>Cecha</th><th>Tętnica</th><th>Żyła</th></tr></thead>
+<tbody>
+<tr><td>Kierunek przepływu</td><td></td><td></td></tr>
+<tr><td>Grubość ściany</td><td></td><td></td></tr>
+<tr><td>Obecność zastawek</td><td></td><td></td></tr>
+<tr><td>Ciśnienie krwi</td><td></td><td></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="card lvl3">
+<span class="lvl">Poziom dla uczniów zainteresowanych</span>
+<h3>Zadanie 5. Zadanie problemowe <span class="pts">5 pkt</span></h3>
+<p>U pacjenta stwierdzono niedomykalność zastawki między lewym przedsionkiem a lewą komorą. Na podstawie wiedzy o budowie serca odpowiedz:</p>
+<ol>
+<li>W którym kierunku będzie cofać się krew? <span style="color:#94a3b8">(1 pkt)</span></li>
+<li>Dlaczego serce takiego pacjenta musi pracować ciężej? <span style="color:#94a3b8">(2 pkt)</span></li>
+<li>Jaki objaw najprawdopodobniej zauważy pacjent podczas wchodzenia po schodach i dlaczego? <span style="color:#94a3b8">(2 pkt)</span></li>
+</ol>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<h3>Zadanie 6. Analiza danych <span class="pts">3 pkt</span></h3>
+<p>Tętno spoczynkowe Ani wynosi 72 uderzenia na minutę, a Kuby, który trenuje pływanie, 54 uderzenia na minutę. Oblicz, ile razy więcej serce Ani uderzy w ciągu doby. Zinterpretuj wynik w kontekście wpływu treningu na pracę serca.</p>
+<div class="lines"></div><div class="lines"></div>
+</div>
+
+<h2>6. Adaptacja dla uczniów ze specjalnymi potrzebami</h2>
+<div class="card spe">
+<span class="lvl">Wersja SPE — dostosowanie do zaleceń z orzeczenia</span>
+<h4>Dysleksja — dwoje uczniów</h4>
+<ul>
+<li>Czcionka bezszeryfowa 14 punktów, interlinia 1,5, wyrównanie do lewej bez justowania</li>
+<li>Polecenia skrócone do jednego zdania, kluczowe wyrazy pogrubione</li>
+<li>Terminy trudne zapisane z podziałem na sylaby: <i>e-ryt-ro-cyt</i>, <i>przed-sio-nek</i></li>
+<li>Zadanie 3 zamiast porządkowania tekstu — układanka z gotowych pasków do naklejenia</li>
+<li>Wydłużony czas pracy o 50 procent, dopuszczalne odpowiedzi ustne</li>
+</ul>
+<h4>Niepełnosprawność intelektualna w stopniu lekkim — jeden uczeń</h4>
+<ul>
+<li>Zakres materiału ograniczony do trzech pojęć: serce, krew, naczynia</li>
+<li>Karta pracy oparta na obrazkach — uczeń koloruje serce na czerwono i płuca na niebiesko, a następnie łączy strzałką</li>
+<li>W ćwiczeniu „żywy schemat” uczeń otrzymuje rolę serca — stoi w centrum i klaszcze w rytm, co włącza go w aktywność bez obciążenia werbalnego</li>
+<li>Kryterium sukcesu ograniczone do: wskazuje serce na planszy i mówi, że serce pompuje krew</li>
+<li>Ocena opisowa zamiast stopnia, informacja zwrotna udzielana natychmiast po zadaniu</li>
+</ul>
+<h4>Zapis do dokumentacji IPET</h4>
+<p style="font-size:.85rem;margin-bottom:0">„Podczas zajęć z działu Organizm człowieka zastosowano dostosowanie formy materiału: uproszczenie poleceń, wydłużenie czasu pracy, materiał obrazkowy oraz rolę o obniżonym obciążeniu werbalnym w ćwiczeniu grupowym. Uczeń realizował cel w zakresie rozpoznawania serca jako narządu pompującego krew.”</p>
+</div>
+
+<h2>7. Sprawdzian sprawdzający — 10 minut</h2>
+<p>Krótki test do wykorzystania na początku kolejnej lekcji jako sprawdzenie zapamiętania.</p>
+
+<div class="q"><b>1.</b> Wskaż zdanie prawdziwe. <span class="pts">1 pkt</span><br>
+A. Tętnice zawsze przenoszą krew bogatą w tlen.<br>
+B. Tętnice to naczynia prowadzące krew z serca.<br>
+C. Żyły mają grubsze ściany niż tętnice.<br>
+D. Naczynia włosowate mają zastawki.</div>
+
+<div class="q"><b>2.</b> Podaj po jednej funkcji krwinek czerwonych i białych. <span class="pts">2 pkt</span>
+<div class="lines"></div><div class="lines"></div></div>
+
+<div class="q"><b>3.</b> Uzupełnij: krwiobieg mały prowadzi krew z prawej komory do ................................., a wraca ona do ................................. przedsionka. <span class="pts">2 pkt</span></div>
+
+<div class="q"><b>4.</b> Wyjaśnij, dlaczego ściana lewej komory jest grubsza niż prawej. <span class="pts">2 pkt</span>
+<div class="lines"></div><div class="lines"></div></div>
+
+<div class="q"><b>5.</b> Podaj dwa nawyki wspierające pracę układu krwionośnego. <span class="pts">2 pkt</span>
+<div class="lines"></div></div>
+
+<div class="key">
+<b>Klucz odpowiedzi i punktacja</b>
+<ol style="margin:9px 0 0">
+<li><b>B</b> — 1 pkt. Uwaga: odpowiedź A jest pułapką, tętnica płucna prowadzi krew odtlenowaną.</li>
+<li>Krwinki czerwone transportują tlen (1 pkt). Krwinki białe uczestniczą w obronie organizmu przed drobnoustrojami (1 pkt).</li>
+<li>Do <b>płuc</b> (1 pkt), wraca do <b>lewego</b> przedsionka (1 pkt).</li>
+<li>Lewa komora tłoczy krew do całego ciała (1 pkt), pokonuje większy opór i wyższe ciśnienie, dlatego jej mięsień jest grubszy (1 pkt).</li>
+<li>Po 1 pkt za każdy sensowny nawyk: aktywność fizyczna, ograniczenie soli i tłuszczów nasyconych, niepalenie, odpowiednia ilość snu, unikanie nadwagi.</li>
+</ol>
+<p style="margin:12px 0 0"><b>Razem: 9 punktów.</b> Proponowany próg: 8–9 pkt bardzo dobry, 6–7 dobry, 4–5 dostateczny, 3 dopuszczający.</p>
+</div>
+
+<h2>8. Ewaluacja lekcji</h2>
+<p>Nauczyciel ocenia realizację celów na podstawie trzech sygnałów: liczby poprawnie uzupełnionych zadań w karcie pracy, płynności drugiego powtórzenia ćwiczenia „żywy schemat” oraz treści pytań zapisanych na żółtych kartkach. Jeśli więcej niż jedna trzecia klasy zapisze pytanie dotyczące krwiobiegów, kolejną lekcję warto rozpocząć od powtórnej wizualizacji.</p>
+
+<div class="tip">
+<b>Co nauczyciel zmienił po wygenerowaniu</b>
+Ten materiał to punkt wyjścia, nie gotowiec do bezrefleksyjnego użycia. W rzeczywistej pracy nauczyciel zwykle skraca jedną fazę, dopasowuje przykłady do swojej klasy i wymienia zadanie problemowe na własne. Belfer AI przejmuje strukturę i formatowanie — decyzja dydaktyczna pozostaje po stronie nauczyciela.
+</div>
+
+<div class="sig">
+<div>Podpis nauczyciela</div>
+<div>Data przeprowadzenia lekcji</div>
+</div>
+
+</main>
+
+<div class="foot">
+<b>Materiał przykładowy wygenerowany przez Belfer AI.</b><br>
+Odwołania do podstawy programowej opierają się na rozporządzeniu Ministra Edukacji w sprawie podstawy programowej kształcenia ogólnego dla szkoły podstawowej. Przed użyciem na lekcji zweryfikuj zgodność z aktualnym brzmieniem przepisów i realizowanym programem nauczania.<br><br>
+<a href="index.html">belfer-ai.pl</a> &nbsp;·&nbsp; kontakt: <a href="mailto:liszka.k@gmail.com">liszka.k@gmail.com</a>
+</div>
+
+</div>
+</body></html>

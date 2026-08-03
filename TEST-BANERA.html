@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8">
+<title>Test banera cookies – Belfer AI</title>
+<style>body{font-family:system-ui;max-width:640px;margin:40px auto;padding:0 20px;line-height:1.7}
+pre{background:#0b1220;color:#7dd3fc;padding:14px;border-radius:8px;font-size:.8rem;overflow-x:auto}
+.ok{color:#15803d;font-weight:700}.bad{color:#b91c1c;font-weight:700}
+li{margin-bottom:9px}</style></head><body>
+<h1>Test banera cookies</h1>
+<p>Otwórz stronę w oknie prywatnym i sprawdź po kolei:</p>
+<ol>
+<li>Baner pojawia się na dole ekranu</li>
+<li>Klikasz <b>Odrzuć wszystko</b> → baner znika, pojawia się ikona ciasteczka w lewym dolnym rogu</li>
+<li>Klikasz ikonę → otwiera się okno ustawień</li>
+<li>Włączasz <b>Funkcjonalne</b> → <b>Zapisz wybór</b> → okno znika, czcionki się zmieniają</li>
+<li>Odświeżasz stronę → baner NIE pojawia się ponownie</li>
+</ol>
+<h2>Jeśli przyciski nie działają</h2>
+<p>Wciśnij <b>F12</b> → zakładka <b>Konsola</b>. Wklej to i wciśnij Enter:</p>
+<pre>document.querySelectorAll('[data-cc]').length</pre>
+<p>Powinno pokazać <span class="ok">6</span>. Jeśli pokazuje <span class="bad">0</span> — plik HTML wgrał się niekompletnie.</p>
+<p>Następnie sprawdź, czy nie ma czerwonych błędów w konsoli. Najczęstsza przyczyna po wgraniu na serwer:</p>
+<ul>
+<li><b>Cache przeglądarki</b> — wciśnij Ctrl+Shift+R (Mac: Cmd+Shift+R)</li>
+<li><b>Cache serwera / CDN</b> — w panelu hostingu wyczyść cache, w Cloudflare: Purge Everything</li>
+<li><b>Optymalizator HTML/JS</b> w hostingu lub wtyczce — wyłącz minifikację JS, potrafi zepsuć kod</li>
+<li><b>Wgrany stary plik</b> — sprawdź datę modyfikacji index.html na serwerze</li>
+</ul>
+<h2>Reset zgody do ponownego testu</h2>
+<pre>localStorage.removeItem('bai_consent');location.reload()</pre>
+</body></html>
