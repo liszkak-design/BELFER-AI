@@ -1,0 +1,54 @@
+=========================================================
+BANER COOKIES - JAK DODAC ANALITYKE (WAZNE)
+=========================================================
+Skrypty zewnetrzne NIE moga byc wstawiane normalnie.
+Musza miec type="text/plain" i data-cc z kategoria.
+Baner sam je uruchomi PO zgodzie uzytkownika.
+
+PRZYKLAD - Google Analytics 4:
+
+<script type="text/plain" data-cc="analytics"
+  src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+<script type="text/plain" data-cc="analytics">
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XXXXXXX',{anonymize_ip:true});
+</script>
+
+PRZYKLAD - Meta Pixel (kategoria marketing):
+
+<script type="text/plain" data-cc="marketing">
+  !function(f,b,e,v,n,t,s){...kod z Facebooka...}
+</script>
+
+KATEGORIE: analytics | marketing
+(functional jest zarezerwowana dla Google Fonts)
+
+Google Consent Mode v2 jest juz podlaczony - stan
+domyslny to "denied" dla wszystkiego, aktualizuje sie
+automatycznie po decyzji uzytkownika.
+
+TEST POPRAWNOSCI:
+1. Otworz strone w oknie prywatnym
+2. F12 -> zakladka Siec (Network)
+3. PRZED kliknieciem w baner NIE moze byc zadnego
+   zapytania do fonts.googleapis.com ani google-analytics
+4. Kliknij "Odrzuc wszystko" - nadal zero zapytan
+5. Kliknij ikone ciasteczka (lewy dolny rog) ->
+   wlacz Funkcjonalne -> czcionki doladuja sie od razu
+
+KOMENDY KONSOLI (F12):
+   BAI_RESET()  - kasuje zgode i przeladowuje strone
+   BAI_OPEN()   - otwiera okno ustawien cookies
+
+DOWOD ZGODY (RODO art. 7 ust. 1):
+Zapis trafia do localStorage pod kluczem bai_consent_log
+z data ISO 8601, wersja banera i trescia wyboru.
+UWAGA: to dowod po stronie przegladarki. Jesli chcesz
+dowod po swojej stronie (zalecane przy kontroli UODO),
+wysylaj rekord na wlasny serwer - nasluchuj zdarzenia:
+document.addEventListener('bai:consent',function(e){
+  fetch('/api/consent',{method:'POST',
+    body:JSON.stringify(e.detail)});
+});
