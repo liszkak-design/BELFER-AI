@@ -1,4 +1,16 @@
+# WERSJA PODGLADOWA (GitHub Pages) - strona ma NIE trafic do Google.
+#
+# Uwaga: celowo NIE ma tu "Disallow: /". Zakaz w robots.txt blokuje
+# pobranie strony, wiec Google nie zobaczylby znacznika
+# <meta name="robots" content="noindex"> i moglby mimo wszystko
+# pokazac sam adres w wynikach wyszukiwania.
+# Roboty musza wejsc, przeczytac noindex i dopiero wtedy odpuscic.
+#
+# Zakaz indeksowania realizuje noindex w kazdym pliku .html.
+# Nie ma tu tez wpisu Sitemap - mapa strony jest tylko dla produkcji.
+#
+# PRZED PUBLIKACJA na belfer-ai.pl: podmien ten plik zawartoscia
+# robots-produkcja.txt i usun noindex ze wszystkich plikow .html.
+
 User-agent: *
 Allow: /
-
-Sitemap: https://belfer-ai.pl/sitemap.xml
