@@ -40,13 +40,24 @@ Nastepnie otworz http://localhost:8000
 
 Repozytorium jest przygotowane pod podglad, ktory NIE ma trafic do Google.
 
-Wlaczenie:
+Wlaczenie - do wyboru jedna z dwoch drog. Settings -> Pages -> Source:
 
-1. Settings -> Pages
-2. Source: **Deploy from a branch**
-3. Branch: **main**, katalog **/ (root)** -> Save
-4. Po ok. 1-2 minutach strona jest pod adresem
-   `https://liszkak-design.github.io/BELFER-AI/`
+**A. GitHub Actions** (zalecane, dziala workflow `.github/workflows/pages.yml`)
+Kazdy push do `main` automatycznie publikuje strone. Nic wiecej nie trzeba
+ustawiac. Przebieg widac w zakladce Actions.
+
+**B. Deploy from a branch**
+Branch: `main`, katalog `/ (root)` -> Save. Wtedy plik workflow jest zbedny.
+
+Po ok. 1-2 minutach strona jest pod adresem
+`https://liszkak-design.github.io/BELFER-AI/`
+
+### 404 na Pages - co sprawdzic
+
+Najczestsza przyczyna: Source ustawiony na **GitHub Actions**, ale w repo nie
+ma zadnego workflow - nie ma wiec czego opublikowac. Objaw: zakladka Actions
+jest pusta, a lista deploymentow w srodowisku `github-pages` rowniez.
+Rozwiazanie: workflow z tego repo (wariant A) albo przelaczenie na wariant B.
 
 Uwaga: przy repozytorium prywatnym GitHub Pages wymaga planu platnego.
 Wszystkie odnosniki w kodzie sa wzgledne, wiec praca w podkatalogu
