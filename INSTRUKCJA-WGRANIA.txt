@@ -4,9 +4,17 @@ BELFER-AI.PL - landing page (wersja 31.07.2026)
 ZAWARTOSC PACZKI
 ----------------
 index.html                - cala strona (HTML + CSS + JS w jednym pliku)
-robots.txt                - zgoda na indeksowanie
+robots.txt                - WERSJA PODGLADOWA (bez wpisu Sitemap)
+robots-produkcja.txt      - wersja dla belfer-ai.pl, do podmiany przy publikacji
 sitemap.xml               - mapa strony
+.nojekyll                 - wylacza Jekyll na GitHub Pages
 INSTRUKCJA-WGRANIA.txt    - ten plik
+
+UWAGA: repozytorium jest ustawione pod PODGLAD na GitHub Pages.
+Kazdy plik .html ma <meta name="robots" content="noindex, nofollow,
+noarchive"> - strona nie trafi do Google. Przed publikacja na
+belfer-ai.pl usun te znaczniki i podmien robots.txt zawartoscia
+robots-produkcja.txt. Szczegoly w README.md.
 
 KROK 1 - WGRANIE
 ----------------

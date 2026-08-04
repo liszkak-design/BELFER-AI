@@ -1,0 +1,8 @@
+# Wersja docelowa dla belfer-ai.pl.
+# Przy publikacji na wlasnej domenie skopiuj zawartosc do robots.txt
+# i usun znaczniki noindex ze wszystkich plikow .html.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://belfer-ai.pl/sitemap.xml
