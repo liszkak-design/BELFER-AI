@@ -8,8 +8,8 @@
 <style>
 :root{--p:#1d4ed8;--a:#f97316;--d:#0f172a;--m:#64748b;--b:#e6ebf4;--bg:#f7f9fc}
 *{box-sizing:border-box}
-body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;margin:0;background:var(--bg);color:var(--d);line-height:1.68;font-size:15px}
-.page{max-width:880px;margin:0 auto;background:#fff;padding:0 0 60px;box-shadow:0 2px 30px rgba(15,23,42,.08)}
+body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;margin:0;padding:clamp(16px, 3vw, 32px) 16px;background:var(--bg);color:var(--d);line-height:1.68;font-size:15px;overflow-x:hidden}
+.page{max-width:880px;margin:0 auto;background:#fff;padding:0 0 60px;border-radius:24px;overflow:hidden;isolation:isolate;clip-path:inset(0 round 24px);-webkit-clip-path:inset(0 round 24px);box-shadow:0 4px 30px rgba(15,23,42,.08)}
 .top{background:linear-gradient(135deg,#0b1220,#152238);color:#fff;padding:34px clamp(20px,4vw,48px) 30px}
 .brand{font-size:.78rem;letter-spacing:2.4px;font-weight:800;color:#fff;margin-bottom:16px}
 .brand span{color:var(--a)}
