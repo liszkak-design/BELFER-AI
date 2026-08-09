@@ -1981,20 +1981,39 @@ footer .bar { border-top: none; padding-top: 32px; font-size: 0.84rem; text-alig
   }
   
   /* MOBILNE MENU HAMBURGER & DRAWER */
-  nav { padding: 12px 18px; position: relative; }
+  nav { padding: 10px 14px; position: relative; }
+  .navin {
+    padding: 0;
+    height: 56px;
+    gap: 6px;
+    justify-content: space-between;
+  }
+  .navlogo {
+    white-space: nowrap !important;
+    font-size: clamp(1.1rem, 4.2vw, 1.35rem) !important;
+    flex-shrink: 0;
+    letter-spacing: -0.03em;
+  }
+  .navcta {
+    white-space: nowrap !important;
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+    flex-shrink: 0;
+  }
   .navtog {
     display: flex !important;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 4px;
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
     background: #fff;
     border: 1.5px solid #e2e8f0;
     border-radius: 12px;
     cursor: pointer;
     z-index: 1001;
+    flex-shrink: 0;
   }
   .navtog i {
     width: 20px;
@@ -2064,6 +2083,12 @@ footer .bar { border-top: none; padding-top: 32px; font-size: 0.84rem; text-alig
   
   .wrap { padding: 48px 18px; }
   h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+
+  /* MOBILNY PROBLEM GRID (KARTY STATYSTYK 75%, 58%, 733 tys.) */
+  .problem-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 
   /* MOBILNE SPOTLIGHTY ZDJĘĆ NARRACYJNYCH */
   div[style*="display:flex; align-items:center; gap:32px"],
@@ -3510,7 +3535,13 @@ else{openBanner();setTimeout(function(){
     banner.hidden=false;banner.classList.add('cc-show');
     banner.style.cssText+=';display:block!important;visibility:visible;opacity:1;';
     if(ov){ov.hidden=false;ov.classList.add('cc-show');}
-  }},120);}
+  }},120);
+window.BAI_RESET=function(){try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_log');}catch(e){}location.reload();};
+window.BAI_OPEN=openModal;
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',BAI_CMP);}else{BAI_CMP();}
+</script>
+
 <script>
 /* ========== Studio Warsztatu Nauczyciela (Interactive Live Workbench) ========== */
 (function(){
