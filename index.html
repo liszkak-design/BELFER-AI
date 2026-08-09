@@ -3510,7 +3510,13 @@ else{openBanner();setTimeout(function(){
     banner.hidden=false;banner.classList.add('cc-show');
     banner.style.cssText+=';display:block!important;visibility:visible;opacity:1;';
     if(ov){ov.hidden=false;ov.classList.add('cc-show');}
-  }},120);}
+  }},120);
+window.BAI_RESET=function(){try{localStorage.removeItem(KEY);localStorage.removeItem(KEY+'_log');}catch(e){}location.reload();};
+window.BAI_OPEN=openModal;
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',BAI_CMP);}else{BAI_CMP();}
+</script>
+
 <script>
 /* ========== Studio Warsztatu Nauczyciela (Interactive Live Workbench) ========== */
 (function(){
